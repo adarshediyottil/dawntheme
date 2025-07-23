@@ -6,40 +6,56 @@ This custom Dawn theme setup allows you to assign related products to any indivi
 
 ## 🛒 Live Store Details
 
-- **Frontend URL**: [https://ediyottil.myshopify.com/](https://ediyottil.myshopify.com/) password: 1234
-- **Sample Product**: [Bangle Bracelet](https://ediyottil.myshopify.com/products/bangle-bracelet)
-
----
+* **Frontend URL**: [https://ediyottil.myshopify.com/](https://ediyottil.myshopify.com/)
+  Password: `1234`
+* **Sample Product**: [Bangle Bracelet](https://ediyottil.myshopify.com/products/bangle-bracelet)
 
 ---
 
 ## 🔧 How to Add Related Products as Bundles
 
-1. **Login to Shopify Admin**  
+1. **Login to Shopify Admin**
    Go to: [https://ediyottil.myshopify.com/admin](https://ediyottil.myshopify.com/admin)
 
-2. **Navigate to Products**  
+2. **Navigate to Products**
    From the sidebar, go to `Products`.
 
-3. **Select a Product**  
+3. **Select a Product**
    Click on the product for which you want to assign bundle items.
 
-4. **Assign Products to Metafield**  
+4. **Assign Products to Metafield**
    Scroll down to the **Metafields** section (usually at the bottom of the product page).
 
-   - Look for a metafield named something like `Related Products (Bundle)` or `related_products_custom`.
-   - Choose one or more products to relate as bundles.
+   * Look for a metafield named `Related Products Custom`.
+   * Choose one or more products to relate as bundles.
 
-5. **Save Changes**  
+5. **Save Changes**
    Click **Save** to apply the metafield assignments.
+
+---
+
+## 🧱 Metafield Configuration
+
+To implement the metafield used for assigning related products, follow these steps:
+
+1. Go to **Settings** → **Custom Data** → **Products**
+2. Click **Add definition**
+3. Configure the metafield as follows:
+
+   * **Name**: `Related Products Custom`
+   * **Namespace and key**: `custom.related_products`
+   * **Content type**: **Product List**
+   * Click **Save**
+
+This metafield enables the selection of multiple products to be associated with another product as bundles.
 
 ---
 
 ## ✅ View on Frontend
 
-1. Go to the frontend product page (e.g., [Bangle Bracelet](https://ediyottil.myshopify.com/products/bangle-bracelet)).
-2. Scroll down below the main product details.
-3. You’ll see a **Related Products Bundle** section displaying the metafield-assigned products.
+1. Visit a product page (e.g., [Bangle Bracelet](https://ediyottil.myshopify.com/products/bangle-bracelet))
+2. Scroll below the product details
+3. The **Related Products Bundle** section will display the metafield-assigned products
 
 ---
 
@@ -47,62 +63,24 @@ This custom Dawn theme setup allows you to assign related products to any indivi
 
 > Below are the theme files that were updated to enable the related bundle feature.
 
-- `sections/main-product.liquid`  
-  *(Add the following code below "blocks": [)*
+* `sections/main-product.liquid`
 
-   {
-      "type": "related_products",
-      "name": "Custom Related Products",
-      "settings": [
-        {
-          "type": "text",
-          "id": "heading",
-          "label": "Heading",
-          "default": "Related Products"
-        },
-    	{
-          "type": "number",
-          "id": "heading_font_size",
-          "label": "Heading font size (px)",
-          "default": 18
-        },
-        {
-          "type": "color",
-          "id": "heading_color",
-          "label": "Heading color",
-          "default": "#121212"
-        }
-      ]
-    },
-
--  `sections/main-product.liquid`   
-  *Liquid code for main-product.liquid file
-Add the following code below {%- case block.type -%}*
-
-line from 91 to 317
-
----
-
-## 🧪 Sample Metafield Definition
-
-To define the metafield in your Shopify admin:
-
-1. Go to `Settings` → `Custom Data` → `Products`
-2. Add a new metafield definition:
-   - **Name**: `Related Products Custom`
-   - **Namespace and key**: `custom.related_products`
-   - **Content Type**: `Product List`
-   - Save
+  * Added schema block for related products (inside `"blocks": [ ... ]`)
+  * Injected custom Liquid logic (from line 91 to 317) to display related product bundles using metafield values
 
 ---
 
 ## 💡 Notes
 
-- Make sure the assigned products are **active** and **available on the online store** channel.
-- For better user experience, consider adding checkboxes or quantity selectors in the bundle section.
+* Ensure the assigned products are **active** and **available on the Online Store** channel.
+* For better UX, you can include quantity selectors and checkboxes in the bundle section.
+* Works seamlessly with the latest version of Dawn Theme.
 
 ---
 
 ## 📬 Contact
 
-For any issues or enhancements, contact the developer at: **adarsh.ediyottil@gmail.com**
+For any issues, suggestions, or enhancements, feel free to reach out:
+
+📧 **[adarsh.ediyottil@gmail.com](mailto:adarsh.ediyottil@gmail.com)**
+
