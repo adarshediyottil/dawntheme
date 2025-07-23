@@ -11,12 +11,6 @@ This custom Dawn theme setup allows you to assign related products to any indivi
 
 ---
 
-## 🔒 Admin Access
-
-- **Admin URL**: [https://ediyottil.myshopify.com/admin](https://ediyottil.myshopify.com/admin)
-- **Username**: `adarshyatnam@gmail.com`
-- **Password**: `shop#456`
-
 ---
 
 ## 🔧 How to Add Related Products as Bundles
